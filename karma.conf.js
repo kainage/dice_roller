@@ -11,6 +11,7 @@ files = [
   JASMINE,
   JASMINE_ADAPTER,
   'js/vendor/angular.js',
+  'spec/lib/*.js',
   'js/*.js',
   'spec/*.js'
 ];

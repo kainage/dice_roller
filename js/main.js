@@ -31,13 +31,9 @@ app.controller('AppCtrl', function ($scope, Dice) {
 	$scope.rolls = []
 	
 	$scope.rollDice = function (sides, amount) {
-		var rolls = randy.multiBetween(sides, amount)
-		$scope.rolls.push({
-			dice: rolls.join(', '),
-			total: rolls.sum(),
-			sides: sides,
-			amount: amount,
-			time: getCurrentDateTime()
-		});
+		var rolled_dice = randy.multiBetween(sides, amount);
+		var new_roll = new dieRoll(rolled_dice, sides);
+		
+		$scope.rolls.push(new_roll);
 	}
 })
