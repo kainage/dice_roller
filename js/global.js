@@ -6,12 +6,12 @@ function getCurrentDateTime() {
 	var hours = currentTime.getHours()
 	var minutes = currentTime.getMinutes()
 	var seconds = currentTime.getSeconds()
-	var suffix
+	var period
 		
 	if (hours > 11) {
-		suffix = "PM"
+		period = "PM"
 	} else {
-		suffix = "AM"
+		period = "AM"
 	}
 	
 	if (hours > 12) {
@@ -22,18 +22,24 @@ function getCurrentDateTime() {
 		minutes = "0" + minutes
 	}
 	
-	return hours + ':' + minutes + ':' + seconds + ' ' + suffix + ', ' + month + "/" + day + "/" + year
+	if (seconds < 10) {
+		seconds = "0" + seconds
+	}
+	
+	return hours + ':' + minutes + ':' + seconds + ' ' + period + ', ' + month + "/" + day + "/" + year
 }
 
-function randomBetween(ceil) {
+var Randy = function() {};
+
+Randy.prototype.between = function(ceil) {
 	return Math.floor((Math.random()*ceil)+1); 
 }
 
-function multiRandomBetween(ceil, amount) {
-	var rolls = [];
+Randy.prototype.multiBetween = function(ceil, amount) {
+	var nums = [];
 	for (var i = 0; i < amount; i++) {
-		rolls.push(randomBetween(ceil));
+		nums.push(this.between(ceil));
 	}
 	
-	return rolls;
+	return nums;
 }

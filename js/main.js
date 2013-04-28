@@ -23,15 +23,17 @@ app.directive("mouseup", function () {
 	}
 })
 
+var randy = new Randy();
+
 app.controller('AppCtrl', function ($scope, Dice) {
 	$scope.dice = Dice;
 	
 	$scope.rolls = []
 	
 	$scope.rollDice = function (sides, amount) {
-		var rolls = multiRandomBetween(sides, amount)
+		var rolls = randy.multiBetween(sides, amount)
 		$scope.rolls.push({
-			dice: rolls,
+			dice: rolls.join(', '),
 			total: rolls.sum(),
 			sides: sides,
 			amount: amount,

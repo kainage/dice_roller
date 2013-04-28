@@ -54,11 +54,7 @@
 							<td>{{ roll.amount }}</td>
 							<td>D{{ roll.sides }}</td>
 							<td><strong>{{ roll.total }}</strong></td>
-							<td>
-								<em class='die' ng-repeat='d in roll.dice'>
-									{{ d }}
-								</em>
-							</td>
+							<td><em>{{ roll.dice }}</em></td>
 							<td>{{ roll.time }}</td>
 						</tr>
 					</tbody>
