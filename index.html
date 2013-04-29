@@ -29,11 +29,9 @@
 				<div class='form-inline'>
 					<legend>Roll Some Dice</legend>
 					
-					<input type='number' class='input-small' ng-model='amount_of_dice' placeholder="Amount" />
+					<amountfield></amountfield>
 					
-					<select class='input-medium' ng-model="selected_die" ng-options="d.label for d in dice.types">
-						<option value="">-- Die Type --</option>
-					</select>
+					<select class='input-small' ng-model="selected_die" ng-options="d.label for d in dice.types" ng-init="selected_die=dice.types[2]"></select>
 					
 					<div mouseup="rollDice({{selected_die.sides|ensureNumerical|ensureInList}}, {{amount_of_dice|ensureNumerical}})" class='btn'><i class='icon-repeat'></i> Roll</div>
 				</div>
@@ -78,6 +76,12 @@
 		<script src="js/factories.js"></script>
 		<script src="js/filters.js"></script>
 		<script src="js/dieRoll.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				$('#amount').focus();
+			})
+		</script>
 		
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
