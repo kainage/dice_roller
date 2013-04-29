@@ -1,19 +1,11 @@
-describe('Dice', function() {
-	beforeEach(module('rollerApp'));
-
-	it('should have 8 .types', inject(function(Dice) {
-		expect(Dice.types.length).toEqual(8);
-	}));
-});
-
-describe('AppCtrl', function() {
+describe('RollerCtrl', function() {
 	var ctrl, scope
 	
 	beforeEach(module('rollerApp'));
 	
 	beforeEach(inject(function($rootScope, $controller) {
 		scope = $rootScope.$new();
-		ctrl = $controller('AppCtrl', {$scope: scope});
+		ctrl = $controller('RollerCtrl', {$scope: scope});
 	}));
 	
 	it("should have dice", function() {

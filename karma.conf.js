@@ -12,6 +12,8 @@ files = [
   JASMINE_ADAPTER,
   'js/vendor/angular.js',
   'spec/lib/*.js',
+  'js/randy.js',
+  'js/global.js',
   'js/*.js',
   'spec/*.js'
 ];
