@@ -21,4 +21,12 @@ describe('RollerCtrl', function() {
 		
 		expect(scope.rolls.length).toEqual(1);
 	})
+	
+	it("should clear rolls when clearRolls() is called", function() {
+		scope.rolls = [1, 2, 3]
+		
+		scope.clearRolls();
+		
+		expect(scope.rolls.length).toEqual(0);
+	})
 });

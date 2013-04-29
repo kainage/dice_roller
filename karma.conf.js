@@ -10,7 +10,7 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'js/vendor/angular.js',
+  'js/vendor/angular.min.js',
   'spec/lib/*.js',
   'js/randy.js',
   'js/global.js',

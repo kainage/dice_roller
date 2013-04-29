@@ -93,9 +93,11 @@ body {
 	line-height: 1.4;
 	padding: 20px;
 }
+h4 {
+	margin-top: 25px;
+}
 .table {
 	width: 600px;
-	margin: 30px 0;
 }
 .die {
 	padding: 0 2px;

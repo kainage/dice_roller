@@ -12,7 +12,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="icon" type="image/png" href="favicon.png">
 
 		<link rel="stylesheet" href="css/normalize.css">
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -33,9 +33,12 @@
 					
 					<select class='input-small' ng-model="selected_die" ng-options="d.label for d in dice.types" ng-init="selected_die=dice.types[2]"></select>
 					
-					<div mouseup="rollDice({{selected_die.sides|ensureNumerical|ensureInList}}, {{amount_of_dice|ensureNumerical}})" class='btn'><i class='icon-repeat'></i> Roll</div>
+					<div ng-click="rollDice(selected_die.sides, amount_of_dice)" class='btn btn-primary'><i class='icon-repeat'></i> Roll</div>
+					
+					<div class="btn" ng-click="clearRolls()"><i class="icon-remove-sign"></i> Clear Rolls</div>
 				</div>
 				
+				<h4>Rolls</h4>
 				<table class='table table-striped table-bordered'>
 					<thead>
 						<tr>
@@ -60,7 +63,7 @@
 			</div>
 		</div>
 		
-		<script src="js/vendor/angular.js"></script>
+		<script src="js/vendor/angular.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="js/vendor/bootstrap.min.js"></script>
 		<script>
@@ -76,20 +79,5 @@
 		<script src="js/factories.js"></script>
 		<script src="js/filters.js"></script>
 		<script src="js/dieRoll.js"></script>
-		
-		<script>
-			$(document).ready(function() {
-				$('#amount').focus();
-			})
-		</script>
-		
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']]; ( function(d, t) {
-					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-					g.src = '//www.google-analytics.com/ga.js';
-					s.parentNode.insertBefore(g, s)
-				}(document, 'script'));
-		</script>
 	</body>
 </html>
