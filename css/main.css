@@ -89,31 +89,31 @@ textarea {
    ========================================================================== */
   
 body {
-	font-size: 1em;
-	line-height: 1.4;
-	padding: 20px;
+  font-size: 1em;
+  line-height: 1.4;
+  padding: 20px;
 }
 h4 {
-	margin-top: 25px;
+  margin-top: 25px;
 }
 .table {
-	width: 600px;
+  width: 600px;
 }
 .die {
-	padding: 0 2px;
+  padding: 0 2px;
 }
 .hide {
-	display: none;
+  display: none;
 }
 .amount {
-	position: relative;
+  position: relative;
 }
 .error {
-	position: absolute;
-	top: 30px;
-	font-size: 12px;
-	color: firebrick;
-	white-space: nowrap;
+  position: absolute;
+  top: 30px;
+  font-size: 12px;
+  color: firebrick;
+  white-space: nowrap;
 }
 
 
